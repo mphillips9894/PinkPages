@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <base href="/">
+
+    <title>Pittsburgh Pink Pages</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
+
+    <!-- JS -->
+    <script src="libs/angular/angular.min.js"></script>
+    <script src="libs/angular-route/angular-route.min.js"></script>
+
+    <!-- Angular Custom -->
+    <script src="js/controllers/MainCtrl.js"></script>
+    <script src="js/controllers/MapsCtrl.js"></script>
+    <script src="js/appRoutes.js"></script>
+    <script src="js/pinkcontrol.js"></script>
+</head>
+
+	<body ng-app="pinkpages">
+		<!-- Angular views for this, they can link to pages that change the view? -->
+		<!-- Not sure if links are right, will adjust when Angular is integrated -->
+		<!-- Navigation bar links should actually be photos -->
+		<!-- Button for resources should not be a view, it should open a menu on hover -->
+		<nav class="navbar navbar-inverse">
+			<ul class="nav navbar-nav">
+				<li><a href="/">Home</a></li>
+				<li><a href="/maps">Maps</a></li>
+				<li><p>Abortionists</p></li>
+			</ul>
+		</nav>
+
+		<!-- Including filler content here temporarily -->
+		<div ng-view class="content">
+			<!-- The views will fill this div -->
+		</div>
+
+		<div class="emergency">
+			<!-- should stick to bottom of page for emergency resource access -->
+			<a href="/emergency">Click here if you are in need of emergency resources.</a>
+		</div>
+	</body>
+</html>
