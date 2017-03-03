@@ -4,6 +4,7 @@
 
 /* probably should fix this so it does not use pixels for padding */
 .emergency {
+    position: fixed;
 	width: 100%;
 	text-align: center;
 	bottom: 0;
