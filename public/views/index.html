@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <base href="/">
 
     <title>Pittsburgh Pink Pages</title>
 
     <!-- CSS -->
-    <link rel="stylesheet" href="libs/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css"> <!-- custom styles -->
 
     <!-- JS -->
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
     <!-- Angular Custom -->
     <script src="js/controllers/MainCtrl.js"></script>
@@ -26,12 +29,17 @@
 		<!-- Not sure if links are right, will adjust when Angular is integrated -->
 		<!-- Navigation bar links should actually be photos -->
 		<!-- Button for resources should not be a view, it should open a menu on hover -->
-		<nav class="navbar navbar-inverse">
-			<ul class="nav navbar-nav">
-				<li><a href="/">Home</a></li>
-				<li><a href="/maps">Maps</a></li>
-				<li><p>Abortionists</p></li>
-			</ul>
+		<nav class="navbar navbar-default">
+			<div class="container-fluid">
+				<div class="navbar-header">
+					<a class="navbar-brand" href="/">PinkPages</a>
+				</div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><a href="/">Home</a></li>
+					<li><a href="/maps">Maps</a></li>
+					<li><a href="#">Abortionists</a></li>
+				</ul>
+			</div>
 		</nav>
 
 		<!-- Including filler content here temporarily -->

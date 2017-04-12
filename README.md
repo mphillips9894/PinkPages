@@ -6,3 +6,6 @@ Access running application at http://localhost:8080
 
 For information on directory stucture or MEAN in general, check out this tutorial:
 https://scotch.io/tutorials/setting-up-a-mean-stack-single-page-application
+
+Maps API key:
+AIzaSyAhykCKZ1VG30WWiP06Sdp_cAyfIXZJvy0
