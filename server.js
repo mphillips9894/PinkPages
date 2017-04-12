@@ -26,6 +26,12 @@ app.use(bodyParser.json());
 app.use(bodyParser.json({type: 'applicatoin/vnd.api+json'}));
 
 //parse application/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({extended: true}));
+
+//override with the X-HTTP-Method-Override header in the request
+app.use(methodOverride('X-HTTP-Method-Override'));
+
+//set the static files location /public/img/ will be /img for users
 app.use(express.static(__dirname + '/public'));
 
 //routes =============================================

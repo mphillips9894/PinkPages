@@ -1,9 +1,19 @@
 // app/routes.js
 
-// No API modules exist at this time
+// grab database models
+var Resource = require('./models/resource');
+var Category = require('./models/category');
+
 
     module.exports = function(app){
-        // no server routes exist
+        // server routes
+        app.get('/api/:cat_id', function(req, res){
+            Resource.find( {category: req.params.cat_id}, function(err, list){
+                if(err)
+                    res.send(err);
+                res.json(list);
+            });
+        });
 
         //frontend routes **********
         // route to handle all angular requests
