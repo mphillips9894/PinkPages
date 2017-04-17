@@ -1,4 +1,4 @@
-// app/models/categories.js
+// app/models/category.js
 //get mongoose module and necessary definitions
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;

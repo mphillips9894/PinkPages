@@ -20,13 +20,13 @@
     <!-- Angular Custom -->
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/MapsCtrl.js"></script>
+    <script src="js/services/CategoryService.js"></script>
     <script src="js/appRoutes.js"></script>
     <script src="js/pinkcontrol.js"></script>
 </head>
 
-	<body ng-app="pinkpages">
-		<!-- Angular views for this, they can link to pages that change the view? -->
-		<!-- Not sure if links are right, will adjust when Angular is integrated -->
+	<body ng-app="pinkpages" ng-controller="MainController">
+		<!-- Angular views for this, they can link to pages that change the view -->
 		<!-- Navigation bar links should actually be photos -->
 		<!-- Button for resources should not be a view, it should open a menu on hover -->
 		<nav class="navbar navbar-default">
@@ -37,14 +37,18 @@
 				<ul class="nav navbar-nav navbar-right">
 					<li><a href="/">Home</a></li>
 					<li><a href="/maps">Maps</a></li>
-					<li><a href="#">Abortionists</a></li>
+					<li class="dropdown">
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Categories</a>
+					        <ul class="dropdown-menu">
+                                <li ng-repeat="cat in cats">{{cat.name}}</li>
+					        </ul>
+					</li>
 				</ul>
 			</div>
 		</nav>
 
-		<!-- Including filler content here temporarily -->
 		<div ng-view class="content">
-			<!-- The views will fill this div -->
+			<!-- The Angular dynamically routed content goes here -->
 		</div>
 
 		<div class="emergency">

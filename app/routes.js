@@ -15,6 +15,15 @@ var Category = require('./models/category');
             });
         });
 
+        // get request returns all categories
+        app.get('/api', function(req, res){
+            Category.find(function(err, cats){
+                if(err)
+                    res.send(err);
+                res.json(cats);
+            });
+        });
+
         //frontend routes **********
         // route to handle all angular requests
         app.get('*', function(req, res){
