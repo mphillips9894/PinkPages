@@ -21,6 +21,7 @@
     <script src="js/controllers/MainCtrl.js"></script>
     <script src="js/controllers/MapsCtrl.js"></script>
     <script src="js/services/CategoryService.js"></script>
+    <script src="js/services/DataService.js"></script>
     <script src="js/appRoutes.js"></script>
     <script src="js/pinkcontrol.js"></script>
 </head>
@@ -40,7 +41,9 @@
 					<li class="dropdown">
 					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
 					        <ul class="dropdown-menu">
-                                <li ng-repeat="cat in cats">{{cat.name}}</li>
+                                <li ng-repeat="cat in cats">
+                                    <a href="/maps"  ng-click="setCat(cat.name)">{{cat.name}}</a>
+                                </li>
 					        </ul>
 					</li>
 				</ul>
