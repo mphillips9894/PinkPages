@@ -13,7 +13,7 @@ var resourceSchema = new Schema({
     name: {type: String, required: true},
     address: {type: String, required: true},
     phone: {type: String, match: phoneMatch, required: true},
-    category: {type: [ObjectId], required: true}
+    category: {type: String, required: true}
 });
 
 // create and export model for resource
