@@ -9,6 +9,10 @@ angular.module('appRoutes', [])
             templateUrl: "views/maps.html",
             controller: "MapsController"
         })
+	.when("/emergency", {
+            templateUrl: "views/emergency.html",
+            controller: "MapsController"
+        })
         .otherwise({
             templateUrl: "views/main.html",
             controller: "MainController"
