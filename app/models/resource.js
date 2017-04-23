@@ -4,7 +4,7 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 var ObjectId = mongoose.Schema.Types.ObjectId;
 
-var phoneMatch = [/\d{3}-\d{3}-d{4}/,
+var phoneMatch = [/\d{3}-\d{3}-\d{4}/,
     "Phone number must be of format nnn-nnn-nnnn"];
 
 // define resource schema

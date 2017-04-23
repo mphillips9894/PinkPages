@@ -10,7 +10,8 @@ db.once('open', function(){
     var cats = [
         {name: 'Unicorn Surgeons'},
         {name: 'Artisanal Soaps'},
-        {name: 'Kitten Vendors'}
+        {name: 'Kitten Vendors'},
+        {name: 'Community Resources'}
     ];
 
     console.log("deleting old things in db");
