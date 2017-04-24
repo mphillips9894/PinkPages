@@ -4,7 +4,7 @@ angular.module('ResourceService', []).factory('Resource', ['$http', function($ht
         //call to get resources by category
         //will respond to a category name, or "all"
         get: function(cat){
-            return $http.get('/api' + cat);
+            return $http.get('/api/' + cat);
         }
     };
 }]);
