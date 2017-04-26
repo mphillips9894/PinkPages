@@ -13,6 +13,7 @@ var resourceSchema = new Schema({
     name: {type: String, required: true},
     address: {type: String, required: true},
     phone: {type: String, match: phoneMatch, required: true},
+    latlng: {type: {}, required: true},  //this will be a Google Maps latitude/longitude object
     category: {type: String, required: true}
 });
 
