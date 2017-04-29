@@ -8,9 +8,16 @@
         </div>
 
         <div class="col-sm-4">    <!-- list goes here -->
-            <p>{{getCatMessage();}}</p>
-            <p>This will be a list of resources in the selected category</p>
-            <p>The resources will be displayed on a map in the place of the image to the left.</p>
+            <h3>{{getCatMessage();}}</h3>
+            <div class="panel-group">
+                <div class="panel panel-default" ng-repeat="res in resources">
+                    <div class="panel-heading">{{res.name}}</div>
+                    <div class="panel-body">
+                        <p>{{res.phone}}</p>
+                        <p>{{res.address}}</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </div>
