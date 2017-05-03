@@ -1,9 +1,23 @@
 // public/js/controllers/MainCtrl.js
 angular.module('MainCtrl', [])
-    .controller('MainController', ['$scope', 'Category', 'Data', function ($scope, Category, Data) {
+    .controller('MainController', ['$scope', '$window', 'Category', 'Data', function ($scope, $window, Category, Data) {
         //initialize variables that will be needed
     	$scope.cats={};
     	//console.log("New main controller initialized");    //Used for debugging
+
+    	//assign function to window for callback from Google Maps async loading
+    	$window.mapsReady = function(){
+    		Data.setMapsReady();
+    	};
+
+    	//now load Google Maps from here to ensure the callback function exists (do it only if it isn't loaded)
+    	if(!Data.getMapsReady()){
+	    	var mapScript = document.createElement('script');
+	    	mapScript.setAttribute('async', '');
+	    	mapScript.setAttribute('defer', '');
+	    	mapScript.setAttribute('src', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyAhykCKZ1VG30WWiP06Sdp_cAyfIXZJvy0&callback=mapsReady');
+	    	document.body.appendChild(mapScript);
+        }
 
         //function to get list of categories from Category service
         Category.get().then(function(cats){
