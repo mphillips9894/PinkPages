@@ -15,3 +15,12 @@
 	height: 400px;
 	width: 100%;
 }
+
+.customStyle{
+	background-color: #F6E0ED;
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+}
+
+.customNav{
+}

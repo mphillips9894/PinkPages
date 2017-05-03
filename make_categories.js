@@ -8,10 +8,9 @@ var db = mongoose.connection;
 db.on('error', console.error.bind(console, 'connection error:'));
 db.once('open', function(){
     var cats = [
-        {name: 'Unicorn Surgeons'},
-        {name: 'Artisanal Soaps'},
-        {name: 'Kitten Vendors'},
-        {name: 'Community Resources'}
+        {"name": "Unicorn Surgeons", "address": "4825 Centre ave", "phone": "7243564077"},
+        {"name": "Artisanal Soaps", "address": "404 atlasburg", "phone": "7246786812"},
+        {"name": "Kitten Vendors", "address": "235 neville", "phone": "4126789512"}
     ];
 
     console.log("deleting old things in db");
