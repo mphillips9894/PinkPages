@@ -35,18 +35,21 @@ db.once('open', function(){
     });
 
     //use geocoder to get lat/lng pair for each resource entry, and save them in db
-    for(x in list){
-        mapsClient.geocode({address: list[x].address}, function(err, response){
-            if(err) return console.error(err);
-            //check for an "OK" response.  get the coordinates and add object to db
-            else if(response.json.status==='OK') {
-                list[x].latlng = response.json.results[0].geometry.location;
-                Resource.create(list[x], function(err, result){
-                    if(err) return console.error(err);
-                    console.log("added resource to db");
-                });
-            } else console.log(response.status);
-        });
+    for(var i=0; i<list.length; i++){
+        //Wrap this in a function to preserve value of i for async callbacks
+        (function(index){
+            mapsClient.geocode({address: list[index].address}, function(err, response){
+                if(err) return console.error(err);
+                //check for an "OK" response.  get the coordinates and add object to db
+                else if(response.json.status==='OK') {
+                    list[index].latlng = response.json.results[0].geometry.location;
+                    Resource.create(list[index], function(err, result){
+                        if(err) return console.error(err);
+                        console.log("added resource to db: " + result.name);
+                    });
+                } else return console.log(response.status);
+            });
+        })(i);
     }
 
     
