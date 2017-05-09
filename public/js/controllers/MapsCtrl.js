@@ -13,18 +13,9 @@ angular.module('MapsCtrl', [])
     		return $scope.cat;
     	};
 
-    	//callback functions for querying resources, defined here for convenienve
-    	var callback = function(list){
-    		$scope.resources = list.data;
-    		console.log($scope.resources);  //debugging
-    	};
-    	var cberr = function(err){
-    		console.error(err);
-    	};
-
     	//function to remove existing markers on map and make new ones
     	//map and resources in the $scope must be initialized
-    	/*$scope.refreshMarkers = function(){
+    	$scope.refreshMarkers = function(){
     		//remove existing markers
     		for(var i=0, l=$scope.markers.length; i<l; i++){
                 $scope.markers[i].setMap(null);
@@ -39,7 +30,17 @@ angular.module('MapsCtrl', [])
                 });
                 $scope.markers.push(marker);
             }//end for loop
-    	};*/
+    	};
+
+    	//callback functions for querying resources, defined here for convenienve
+    	var callback = function(list){
+    		$scope.resources = list.data;
+    		console.log($scope.resources);  //debugging
+    		$scope.refreshMarkers();
+    	};
+    	var cberr = function(err){
+    		console.error(err);
+    	};
 
     	//wait until the Maps API is loaded, then create the map
     	$scope.$watch(function(){
@@ -51,6 +52,7 @@ angular.module('MapsCtrl', [])
 	    		    center: {lat: 40.437417, lng: -79.997923}
 	    	    });
     		}
+    		$scope.refreshMarkers();
     	});
     	
 
@@ -61,5 +63,6 @@ angular.module('MapsCtrl', [])
             $scope.cat = newValue;
             if($scope.cat==="") Resource.get("all").then(callback, cberr);
             else Resource.get($scope.cat).then(callback, cberr);
+
         });
     }]);
