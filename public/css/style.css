@@ -1,6 +1,6 @@
-.content {
+/*.content {
 	padding: 5%;
-}
+}*/
 
 /* probably should fix this so it does not use pixels for padding */
 .emergency {
@@ -20,7 +20,4 @@
 	background-color: #F6E0ED;
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
-}
-
-.customNav{
 }
