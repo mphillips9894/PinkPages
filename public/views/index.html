@@ -33,7 +33,7 @@
 		<!-- Angular views for this, they can link to pages that change the view -->
 		<!-- Navigation bar links should actually be photos -->
 		<!-- Button for resources should not be a view, it should open a menu on hover -->
-		<nav class="navbar navbar-default customNav">
+		<nav class="navbar navbar-default">
 			<div class="container-fluid">
 				<div class="navbar-header">
 					<a class="navbar-brand" href="/">PinkPages</a>
@@ -56,11 +56,11 @@
 		<div ng-view class="content">
 			<!-- The Angular dynamically routed content goes here -->
 		</div>
-		<footer class="footer">
-      		<div class="container">
-        		<p class="text-muted"><a href="/emergency">Click here for emergency resources</a></p>
-      		</div>
-    	</footer>
+		<div class="navbar navbar-default navbar-fixed-bottom" style="background-color: #6F6D6D">
+			<div class="container">
+				<p style="text-align: center; padding-top: 10px"><a class="text-danger" href="/emergency">Click here for emergency resources</a></p>
+			</div>
+		</div>
 		<!-- Load Google Maps JavaScript API -->
 		<!--
 		<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAhykCKZ1VG30WWiP06Sdp_cAyfIXZJvy0&callback=mapsReady"></script> -->
