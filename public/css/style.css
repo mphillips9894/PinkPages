@@ -1,7 +1,3 @@
-.content {
-	padding: 5%;
-}
-
 /* probably should fix this so it does not use pixels for padding */
 .emergency {
     position: fixed;
