@@ -9,24 +9,49 @@
 
 #map {
 	height: 400px;
-	width: 100%;
+	width: 95%;
+	border:2px solid #9c9b9b;
+	border-radius:5px;
+	box-shadow: 3px 3px 5px #999;
 }
 
 .customStyle{
-	background-color: #FFC7E8;
+	/*background-color: #FFC7E8;*/
 	font-family: 'Roboto', sans-serif;
 	font-size: 16px;
+	background-color: #F6D4E5;
 }
 
 #myCarousel{
-	display: inline-block;
-	width: 100%;
-}
-
-.carouselPic{
+	width:80%;
 	height:400px;
+	margin: 0 auto;
 }
 
-.carousel-inner img {
-	margin: auto;
+.carousel-inner{
+	height:100%;
+}
+
+/*.carousel-inner img {
+	margin: auto;*/
+}
+
+.gradient{
+	background: #FBD3E9;  /* fallback for old browsers */
+	background: -webkit-linear-gradient(to bottom, #BB377D, #FBD3E9);  /* Chrome 10-25, Safari 5.1-6 */
+	background: linear-gradient(to bottom, #BB377D, #FBD3E9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.item {
+	background-size: cover;
+	background-position: 50% 50%;
+	height: 400px;
+}
+
+.item img {
+	visibility: hidden;
+}
+
+.nav, .pagination, .carousel, .panel-title a {
+	cursor: pointer;
 }

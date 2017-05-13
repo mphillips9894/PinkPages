@@ -15,8 +15,11 @@
     <!-- JS -->
     <script src="libs/angular/angular.min.js"></script>
     <script src="libs/angular-route/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.2/angular-sanitize.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="libs/ui-bootstrap-2.5.0.min.js"></script>
 
     <!-- Angular Custom -->
     <script src="js/controllers/MainCtrl.js"></script>
@@ -42,7 +45,7 @@
 					<li><a href="/"><span class="glyphicon glyphicon-home" aria-hidden="true"></span></a></li>
 					<li><a href="/maps"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span></a></li>
 					<li class="dropdown">
-					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th" aria-hidden="true"></span></a>
+					    <a href="#" class="dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-th" aria-hidden="true" style="padding-right:15px"></span></a>
 					        <ul class="dropdown-menu">
                                 <li ng-repeat="cat in cats">
                                     <a href="/maps"  ng-click="setCat(cat.name)">{{cat.name}}</a>
