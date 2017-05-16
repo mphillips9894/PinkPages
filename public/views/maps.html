@@ -25,6 +25,31 @@
         </div>
     </div> -->
 
+
+    <!-- This is where we try to make the accordion -->
+
+    <div id="accordion" class="panel-group">
+        <div class="panel panel-default" ng-repeat="cat in cats">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" data-parent="#accordion" href="#collapse{{$index}}">{{cat.name}}</a>
+                </h4>
+            </div>
+            <div id="collapse{{$index}}" class="panel-collapse collapse">
+                <div class="panel-body">
+                    <ul class="list-group" ng-repeat="res in resources | catFilter : cat.name">
+                        <li class="list-group-item">{{res.name}}</li>
+                        <li class="list-group-item">{{res.phone}}</li>
+                        <li class="list-group-item">{{res.address}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- this is where the accordion ends -->
+
+
     </div>
     <div class="col-sm-8">    <!-- map goes here -->
         <div id="map"></div>
